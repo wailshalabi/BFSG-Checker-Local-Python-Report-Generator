@@ -36,13 +36,6 @@ env/
 /data/
 !/data/.gitkeep
 
-# Screenshots, PDFs, JSON outputs
-*.png
-*.jpg
-*.jpeg
-*.pdf
-*.json
-
 # ===============================
 # Playwright
 # ===============================
