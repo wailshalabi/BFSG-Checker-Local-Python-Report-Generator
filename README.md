@@ -1,5 +1,12 @@
 # BFSG Checker (Starter: Single URL, Mobile+Desktop, robots.txt, PDF, Docker, SQLite, Worker)
 
+![Python](https://img.shields.io/badge/python-3.12-blue.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688.svg)
+![Docker](https://img.shields.io/badge/docker-ready-2496ED.svg)
+![Playwright](https://img.shields.io/badge/playwright-chromium-2EAD33.svg)
+![SQLite](https://img.shields.io/badge/database-SQLite-003B57.svg)
+![PDF](https://img.shields.io/badge/report-PDF-success.svg)
+
 This is a lightweight training/demo project that scans **one URL** for accessibility issues (WCAG 2.1 AA focused), respects **robots.txt**, runs checks in **desktop + mobile** viewports, generates a **PDF report**, and stores results in **SQLite**.
 
 - **No Redis / No Celery / No Postgres**
