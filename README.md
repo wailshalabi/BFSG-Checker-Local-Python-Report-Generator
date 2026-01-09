@@ -30,6 +30,14 @@ From the project root:
 
 Create .env file out of the .env.example file
 
+Run this command to download the file locally
+
+```bash
+curl -L https://unpkg.com/axe-core@4.10.2/axe.min.js -o vendor/axe/axe.min.js
+```
+
+To start the docker containers run the command
+
 ```bash
 docker compose up --build
 ```
@@ -48,9 +56,7 @@ Go to:
 
 ### 2.1 Enqueue a scan
 ```bash
-curl -X POST http://localhost:8000/scan \
-  -H "Content-Type: application/json" \
-  -d '{"url":"https://example.com"}'
+curl -X POST http://localhost:8000/scan -H "Content-Type: application/json" -d '{"url":"https://wailshalabi.com"}'
 ```
 
 Response:

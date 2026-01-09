@@ -1,1 +1,78 @@
+# ===============================
+# Python
+# ===============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# ===============================
+# Environment / secrets
+# ===============================
 .env
+.env.*
+!.env.example
+
+# ===============================
+# Database
+# ===============================
+*.sqlite
+*.sqlite3
+/data/bfsg_checker.sqlite
+
+# ===============================
+# Generated scan data & artifacts
+# ===============================
+/data/
+!/data/.gitkeep
+
+# Screenshots, PDFs, JSON outputs
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.json
+
+# ===============================
+# Playwright
+# ===============================
+.playwright/
+ms-playwright/
+playwright-report/
+
+# ===============================
+# Node / axe vendoring (if local)
+# ===============================
+node_modules/
+vendor/axe/axe.min.js
+
+# ===============================
+# Logs
+# ===============================
+*.log
+logs/
+
+# ===============================
+# Docker
+# ===============================
+docker/*.log
+
+# ===============================
+# OS / Editor
+# ===============================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
