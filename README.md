@@ -1,7 +1,6 @@
 # BFSG Checker (Starter: Single URL, Mobile+Desktop, robots.txt, PDF, Docker, SQLite, Worker)
 
-This is a lightweight training/demo project that scans **one URL** for accessibility issues (WCAG 2.1 AA focused),
-respects **robots.txt**, runs checks in **desktop + mobile** viewports, generates a **PDF report**, and stores results in **SQLite**.
+This is a lightweight training/demo project that scans **one URL** for accessibility issues (WCAG 2.1 AA focused), respects **robots.txt**, runs checks in **desktop + mobile** viewports, generates a **PDF report**, and stores results in **SQLite**.
 
 - **No Redis / No Celery / No Postgres**
 - Uses a simple DB-backed job queue (SQLite row status: queued → running → done/failed)
@@ -28,7 +27,7 @@ respects **robots.txt**, runs checks in **desktop + mobile** viewports, generate
 ### 1.1 Build & run
 From the project root:
 
-Create .env file out of the .env.example file
+Copy `.env.example` to `.env` and adjust if needed and see configuration section bellow for more details.
 
 Run this command to download the file locally
 
@@ -39,11 +38,12 @@ curl -L https://unpkg.com/axe-core@4.10.2/axe.min.js -o vendor/axe/axe.min.js
 To start the docker containers run the command
 
 ```bash
-docker compose up --build
+docker compose up --build -d
 ```
 
 This starts two containers:
-- `api` (FastAPI) on http://localhost:8000
+- `interface` (FastAPI) on http://localhost:8000
+- `api` (FastAPI) on http://localhost:8000/docs
 - `worker` (background job processor)
 
 ### 1.2 Open API docs
@@ -137,8 +137,5 @@ python -m app.jobs.worker
 
 ---
 
-## 8) Next upgrades (if you continue)
-- Add auth scanning (login scripts)
-- Add multi-page crawling with rate limits
-- Replace SQLite worker with Redis/Celery for scale
-- Add HTML report endpoint and UI dashboard
+## 8) Security disclaimer
+This project is for educational purposes only, do not use this implementation directly in production Real systems.
