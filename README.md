@@ -22,6 +22,19 @@ This is a lightweight training/demo project that scans **one URL** for accessibi
 
 ---
 
+## Screenshots
+
+### API
+![API Documentation](images/1.PNG)
+
+### Homepage
+![Homepage dashboard](images/2.PNG)
+
+### Report
+![Generated PDF report](images/3.PNG)
+
+---
+
 ## 0) Prerequisites
 - Docker + Docker Compose (recommended)
 
