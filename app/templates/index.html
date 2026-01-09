@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card">
+    <h2 style="margin-top:0;">Scan a page</h2>
+    <form method="post" action="/ui/scan">
+      <label class="muted" for="url">URL</label>
+      <input id="url" name="url" type="text" placeholder="https://example.com" required />
+      <div style="height:12px"></div>
+      <button type="submit">Start scan</button>
+    </form>
+    <p class="muted" style="margin:14px 0 0 0;">
+      Tip: Use a public URL. If robots.txt blocks it, the scan will fail (by design).
+    </p>
+  </div>
+{% endblock %}

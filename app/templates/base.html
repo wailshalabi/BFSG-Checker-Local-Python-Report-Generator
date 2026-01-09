@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BFSG Checker</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 0; background: #0b1220; color: #e8eefc; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 28px 18px; }
+    .card { background: #111a2e; border: 1px solid #223055; border-radius: 14px; padding: 18px; box-shadow: 0 8px 30px rgba(0,0,0,.35); }
+    input, button { font-size: 16px; }
+    input[type=text] { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #2b3c68; background: #0c1428; color: #e8eefc; }
+    button { padding: 12px 14px; border-radius: 10px; border: 0; background: #3b82f6; color: white; cursor: pointer; }
+    button:disabled { opacity: .6; cursor: not-allowed; }
+    a { color: #93c5fd; text-decoration: none; }
+    .muted { color: #a9b6d6; }
+    .row { display: flex; gap: 10px; align-items: center; }
+    .row > * { flex: 1; }
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 12px; background: #223055; border: 1px solid #2b3c68; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .stat { background: #0c1428; border: 1px solid #223055; border-radius: 12px; padding: 10px; }
+    .stat b { font-size: 18px; display: block; }
+    .error { background: #3f1d2a; border: 1px solid #7a2b45; padding: 10px; border-radius: 12px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 style="margin:0 0 6px 0;">BFSG Checker</h1>
+    <p class="muted" style="margin:0 0 18px 0;">Single-URL WCAG/BFSG pre-check with mobile/desktop + PDF report.</p>
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card">
+    <div class="row">
+      <div>
+        <h2 style="margin:0;">Scan #{{ scan_id }}</h2>
+        {% if scan and scan.url %}
+          <div class="muted" style="word-break:break-all;">{{ scan.url }}</div>
+        {% endif %}
+      </div>
+      <div style="text-align:right;">
+        {% if scan %}
+          <span class="badge">Status: {{ scan.status }}</span>
+        {% endif %}
+      </div>
+    </div>
+
+    <div style="height:14px"></div>
+
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% elif not scan %}
+      <div class="error">Scan not found.</div>
+    {% else %}
+      {% if scan.status in ["queued", "running"] %}
+        <p class="muted">This page will refresh automatically until the scan finishes.</p>
+        <script>
+          setTimeout(() => window.location.reload(), 2000);
+        </script>
+      {% endif %}
+
+      {% if scan.status == "failed" %}
+        <div class="error">
+          <b>Scan failed:</b> {{ scan.error_message }}
+        </div>
+      {% endif %}
+
+      {% if scan.summary %}
+        <h3>Summary</h3>
+        <div class="grid">
+          <div class="stat"><b>{{ scan.summary.total }}</b><span class="muted">Total</span></div>
+          <div class="stat"><b>{{ scan.summary.critical }}</b><span class="muted">Critical</span></div>
+          <div class="stat"><b>{{ scan.summary.serious }}</b><span class="muted">Serious</span></div>
+          <div class="stat"><b>{{ scan.summary.moderate }}</b><span class="muted">Moderate</span></div>
+        </div>
+      {% endif %}
+
+      {% if scan.report_pdf_url %}
+        <div style="height:16px"></div>
+        <a href="{{ scan.report_pdf_url }}"><button type="button">Download PDF report</button></a>
+      {% endif %}
+
+      <div style="height:18px"></div>
+      <a href="/">← Start another scan</a>
+    {% endif %}
+  </div>
+{% endblock %}
